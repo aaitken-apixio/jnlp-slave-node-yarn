@@ -1,1 +1,0 @@
-# jnlp-slave-node-yarn
