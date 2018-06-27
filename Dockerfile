@@ -4,6 +4,7 @@ MAINTAINER Alex Aitken <aaitken@apixio.com>
 ENV SBT_VERSION 1.1.6
 
 USER root
+RUN apt-get remove nodejs
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g yarn
