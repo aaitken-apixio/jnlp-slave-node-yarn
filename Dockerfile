@@ -4,6 +4,8 @@ MAINTAINER Alex Aitken <aaitken@apixio.com>
 ENV SBT_VERSION 1.1.6
 
 USER root
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN apt-get install -y nodejs
 RUN npm install -g yarn
 RUN apt-get -y update
 RUN mkdir -p /home/jenkins/.ivy2/
