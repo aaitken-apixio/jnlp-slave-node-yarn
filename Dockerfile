@@ -1,6 +1,8 @@
 FROM cloudbees/jnlp-slave-with-java-build-tools
 MAINTAINER Alex Aitken <aaitken@apixio.com>
 
+ENV SBT_VERSION 1.1.6
+
 USER root
 RUN npm install -g yarn
 RUN apt-get -y update
