@@ -10,3 +10,6 @@ RUN printf "realm=Sonatype Nexus Repository Manager\n# realm=Artifactory Realm\n
 RUN sudo apt-get install -y sbt
 RUN chown jenkins:jenkins -R /home/jenkins
 USER jenkins
+# Install sbt
+RUN curl -sL "https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz" | gunzip | tar -x -C /usr/local && \
+    ln -s /usr/local/sbt/bin/sbt /usr/local/bin
