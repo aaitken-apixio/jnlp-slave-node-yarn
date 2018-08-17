@@ -5,7 +5,8 @@ ENV SBT_VERSION 1.1.6
 
 USER root
 RUN npm install -g yarn 
-RUN apt-get -y update rpm
+RUN apt-get -y update
+RUN apt-get -y install rpm
 RUN mkdir -p /home/jenkins/.ivy2/
 RUN printf "realm=Artifactory Realm\nhost=repos.apixio.com\nuser=jenkins\npassword=bh29rWAJbc\n" > /home/jenkins/.ivy2/build.credentials
 RUN printf "realm=Artifactory Realm\nhost=repos.apixio.com\nuser=jenkins\npassword=bh29rWAJbc\n" > /home/jenkins/.ivy2/release.credentials
