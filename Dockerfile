@@ -5,6 +5,8 @@ ENV SBT_VERSION 1.1.6
 
 USER root
 RUN npm install -g yarn 
+RUN npm install node -g
+RUN npm install npm -g
 RUN apt-get -y update
 RUN apt-get -y install rpm xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 python3-pip
 RUN mkdir -p /home/jenkins/.ivy2/
