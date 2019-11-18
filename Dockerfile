@@ -4,11 +4,9 @@ MAINTAINER Alex Aitken <aaitken@apixio.com>
 ENV SBT_VERSION 1.1.6
 
 USER root
-RUN npm install -g yarn 
-RUN npm install node -g
-RUN npm install npm -g
 RUN apt-get -y update
 RUN apt-get -y install rpm xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 python3-pip
+RUN npm install -g yarn node-linux-x64 npm
 RUN mkdir -p /home/jenkins/.ivy2/
 RUN export SBT_OPTS="-Xmx4G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M  -Duser.timezone=GMT"
 RUN printf "realm=Artifactory Realm\nhost=repos.apixio.com\nuser=jenkins\npassword=bh29rWAJbc\n" > /home/jenkins/.ivy2/build.credentials
